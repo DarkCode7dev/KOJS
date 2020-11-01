@@ -1,0 +1,19 @@
+<ul data-bind="foreach:friends">
+	<li data-bind="text:name"></li>
+</ul>
+<script src="knockout-3.5.1.js"></script>
+
+<script >
+	function Friend(name){
+
+		this.name=name;
+	}
+	var obj ={
+		firstname: ko.observable("Devesh"),
+		lastname: ko.observable("Dewedi"),
+
+		friends: ko.observableArray([new Friend('Arun'), new Friend('Aditya'),new Friend('Adi')])
+};
+
+	ko.applyBindings(obj);
+</script>
