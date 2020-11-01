@@ -1,0 +1,18 @@
+<script src="knockout-3.5.1.js"></script>
+<p>Enter Firstname: <input data-bind="value:firstname"></p>
+<p>Display Firstname : <span data-bind="text:firstname"></span> </p>
+<p>Enter Lastname: <input data-bind="value:lastname"></p>
+<p>Display Lastname : <span data-bind="text:lastname"></span> </p>
+<p>Fullname: <span data-bind="text:fullname"></span></p>
+<script >
+	var obj ={
+		firstname: ko.observable("Devesh"),
+		lastname: ko.observable("Dewedi")
+};
+
+obj.fullname= ko.computed(function(){
+	return obj.firstname() +' '+ obj.lastname();
+})
+	
+	ko.applyBindings(obj);
+</script>
