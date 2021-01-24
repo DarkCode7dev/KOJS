@@ -1,0 +1,36 @@
+html============================
+
+
+<div id="knockout-app" class="card">
+   <header>
+      Good Dog Walks Inc.
+   </header>
+   <div class="card-section">
+      <h2>Hello, <span data-bind="text: firstName"><span></h2>
+      <p>How many walks will we take today?</p>
+      <div class="counter-ui-container">
+         <button>-</button>
+         <span class="counter">0</span>
+         <button>+</button>
+      </div>
+   </div>
+   <footer>
+      <span>Have a tail wagging day!</span>
+   </footer>
+</div>
+================================================kojs
+function CounterViewModel() {
+  var self = this;
+  self.firstName=ko.observable("Wayne");
+  self.firstName("George")
+}
+
+ko.applyBindings(new CounterViewModel)
+document.querySelector("#knockout-app")
+=======================================CSS
+body {
+  font-family: system-ui;
+  background: #f06d06;
+  color: white;
+  text-align: center;
+}
